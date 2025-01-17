@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react'
 
 
@@ -23,7 +24,7 @@ const LoginPage = () => {
               height={350} />
             <h1 className="mb-2 mt-2 text-2xl text-red-200">Cow App</h1>
           </div>
-          <form action="#">
+          <form>
             <div className="mb-4 text-lg">
               <input className="rounded-3xl border-none bg-cyan-400 bg-opacity-50 px-20 py-2 text-center text-inherit placeholder-gray-800 shadow-lg outline-none backdrop-blur-md" type="text" name="name" placeholder="user" />
             </div>
@@ -32,7 +33,7 @@ const LoginPage = () => {
               <input className="rounded-3xl border-none bg-cyan-400 bg-opacity-50 px-20 py-2 text-center text-inherit placeholder-gray-800 shadow-lg outline-none backdrop-blur-md" type="Password" name="name" placeholder="password" />
             </div>
             <div className="mt-8 flex justify-center text-lg text-black">
-              <button type="submit" className="rounded-3xl bg-cyan-400 bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-red-200">Login</button>
+              <Link href={"/dashboard/pokemons"} className="rounded-3xl bg-cyan-400 bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-red-200">Login</Link>
             </div>
           </form>
         </div>
