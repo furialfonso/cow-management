@@ -20,6 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       icons: [pokemon.sprites.other?.dream_world.front_default ?? ''],
     }
   } catch (e) {
+    console.log(e);
     return {
       title: `error`,
       description: `Pokemon page error`,
@@ -41,6 +42,7 @@ const getDetailPokemon = async (id: string): Promise<Pokemon> => {
 
     return pokemon;
   } catch (e) {
+    console.log(e);
     notFound();
   }
 }
