@@ -12,8 +12,7 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   try {
-    const { id } = await params;
-    const pokemon = await getDetailPokemon(id);
+    const pokemon = await getDetailPokemon(params.id);
     return {
       title: `#${pokemon.id} - ${pokemon.name}`,
       description: `Pokemon page ${pokemon.name}`,
@@ -26,7 +25,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: `Pokemon page error`,
     }
   }
-
 }
 
 const getDetailPokemon = async (id: string): Promise<Pokemon> => {
@@ -49,9 +47,8 @@ const getDetailPokemon = async (id: string): Promise<Pokemon> => {
 
 
 export default async function PokemonPage({ params }: Props) {
-  const { id } = await params;
-  const pokemon = await getDetailPokemon(id);
 
+  const pokemon = await getDetailPokemon(params.id);
 
   return (
     <div className="flex mt-5 flex-col items-center text-slate-800">
@@ -142,9 +139,6 @@ export default async function PokemonPage({ params }: Props) {
 
             </div>
           </div>
-
-
-
         </div>
       </div>
     </div>
