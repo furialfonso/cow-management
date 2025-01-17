@@ -3,10 +3,12 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
+interface Params {
+  id: string;
+}
+
 interface Props {
-  params: {
-    id: string;
-  }
+  params: Params;
 }
 
 
